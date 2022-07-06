@@ -450,6 +450,9 @@ void ImageProjection::publishClouds() {
                           const pcl::PointCloud<PointType>::Ptr& cloud) {
     if (pub->get_subscription_count() != 0) {
       pcl::toROSMsg(*cloud, temp);
+
+      //add for safety, since some poincloud is losing their frame id
+      temp.header.frame_id = "base_link";
       pub->publish(temp);
     }
   };
