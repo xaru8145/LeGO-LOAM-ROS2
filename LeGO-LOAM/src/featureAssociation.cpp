@@ -65,13 +65,13 @@ FeatureAssociation::FeatureAssociation(const std::string &name, Channel<Projecti
   _cycle_count = 0;
 
   // Declare parameters
-  this->declare_parameter(PARAM_VERTICAL_SCANS,rclcpp::PARAMETER_INTEGER );
-  this->declare_parameter(PARAM_HORIZONTAL_SCANS,rclcpp::PARAMETER_INTEGER );
-  this->declare_parameter(PARAM_SCAN_PERIOD,rclcpp::PARAMETER_DOUBLE );
-  this->declare_parameter(PARAM_FREQ_DIVIDER,rclcpp::PARAMETER_INTEGER );
-  this->declare_parameter(PARAM_EDGE_THRESHOLD,rclcpp::PARAMETER_DOUBLE );
-  this->declare_parameter(PARAM_SURF_THRESHOLD,rclcpp::PARAMETER_DOUBLE );
-  this->declare_parameter(PARAM_DISTANCE,rclcpp::PARAMETER_DOUBLE );
+  this->declare_parameter<int>(PARAM_VERTICAL_SCANS,rclcpp::PARAMETER_INTEGER );
+  this->declare_parameter<int>(PARAM_HORIZONTAL_SCANS,rclcpp::PARAMETER_INTEGER );
+  this->declare_parameter<double>(PARAM_SCAN_PERIOD,rclcpp::PARAMETER_DOUBLE );
+  this->declare_parameter<int>(PARAM_FREQ_DIVIDER,rclcpp::PARAMETER_INTEGER );
+  this->declare_parameter<double>(PARAM_EDGE_THRESHOLD,rclcpp::PARAMETER_DOUBLE );
+  this->declare_parameter<double>(PARAM_SURF_THRESHOLD,rclcpp::PARAMETER_DOUBLE );
+  this->declare_parameter<double>(PARAM_DISTANCE,rclcpp::PARAMETER_DOUBLE );
 
   float nearest_dist;
 
